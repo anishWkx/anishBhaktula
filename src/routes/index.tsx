@@ -165,7 +165,15 @@ function Portfolio() {
       await emailjs.send(
         "service_8iguigi",
         "template_cz9v3tj",
-        { name, email, subject, message, reply_to: email },
+        {
+          name,
+          from_name: name,
+          email,
+          from_email: email,
+          subject,
+          message,
+          reply_to: email,
+        },
         { publicKey: "lJaq45k2IKTIuegKi" },
       );
       form.reset();
@@ -438,7 +446,7 @@ function Portfolio() {
             <div className="form-field"><Label htmlFor="message">Your message</Label><Textarea id="message" name="message" placeholder="A little context goes a long way…" minLength={10} maxLength={3000} rows={4} required /></div>
             <Button type="submit" className="button-amber contact-submit" size="lg" disabled={isSending}>
               {isSending ? "Sending…" : "Send message"}
-              {isSending ? <LoaderCircle className="contact-spinner" aria-hidden="true" /> : <Send aria-hidden="true" />}
+              {isSending ? <LoaderCircle className="contact-spinner animate-spin" aria-hidden="true" /> : <Send aria-hidden="true" />}
             </Button>
             <p className={`contact-notice${contactStatus ? ` contact-notice-${contactStatus}` : ""}`} role="status" aria-live="polite">{contactNotice}</p>
           </form>
