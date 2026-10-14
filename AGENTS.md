@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+Contact form delivery uses the EmailJS browser SDK because its public key is designed for client-side submissions.

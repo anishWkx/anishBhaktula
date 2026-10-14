@@ -1326,8 +1326,8 @@
 .contact-submit { width: 100%; justify-content: space-between; margin-top: 19px; }
 .contact-submit svg { width: 14px; height: 14px; }
 .contact-notice { min-height: 14px; margin-top: 9px !important; color: var(--color-amber) !important; font-size: 9px !important; }
-.contact-notice-success { color: oklch(0.78 0.12 151) !important; }
-.contact-notice-error { color: oklch(0.78 0.14 28) !important; }
+.contact-notice-success { color: var(--color-amber) !important; }
+.contact-notice-error { color: var(--color-destructive) !important; }
 .contact-submit:disabled { cursor: wait; opacity: 0.75; }
 
 .site-footer { background: var(--color-surface-dark); color: var(--color-background); }
