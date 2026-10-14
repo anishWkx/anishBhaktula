@@ -16,6 +16,7 @@ import {
   Globe2,
   GraduationCap,
   Linkedin,
+  LoaderCircle,
   Mail,
   Menu,
   MonitorUp,
@@ -26,6 +27,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -141,8 +143,10 @@ export const Route = createFileRoute("/")({
 function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactNotice, setContactNotice] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [contactStatus, setContactStatus] = useState<"success" | "error" | "">("");
 
-  function openEmail(event: FormEvent<HTMLFormElement>) {
+  async function sendContactMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
@@ -152,10 +156,35 @@ function Portfolio() {
     const email = String(values.get("email") ?? "").trim();
     const subject = String(values.get("subject") ?? "").trim();
     const message = String(values.get("message") ?? "").trim();
-    const body = `${message}\n\nFrom: ${name} <${email}>`;
-    const mailto = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setContactNotice("Your email app should open with your message ready. The form does not send or store it.");
-    window.location.href = mailto;
+
+    setIsSending(true);
+    setContactNotice("");
+    setContactStatus("");
+
+    try {
+      await emailjs.send(
+        "service_8iguigi",
+        "template_cz9v3tj",
+        {
+          name,
+          from_name: name,
+          email,
+          from_email: email,
+          subject,
+          message,
+          reply_to: email,
+        },
+        { publicKey: "lJaq45k2IKTIuegKi" },
+      );
+      form.reset();
+      setContactStatus("success");
+      setContactNotice("Thanks for reaching out — your message has been sent.");
+    } catch {
+      setContactStatus("error");
+      setContactNotice("Your message couldn’t be sent. Please try again; your details are still here.");
+    } finally {
+      setIsSending(false);
+    }
   }
 
   return (
@@ -407,16 +436,19 @@ function Portfolio() {
             </div>
             <div className="contact-stamp"><Mail aria-hidden="true" /><span>ALL GOOD<br />THINGS START<br />WITH A HELLO.</span></div>
           </div>
-          <form className="contact-form" onSubmit={openEmail}>
+          <form className="contact-form" onSubmit={sendContactMessage} aria-busy={isSending}>
             <div className="contact-form-heading"><span>01 — SAY HELLO</span><ArrowDownRight aria-hidden="true" /></div>
             <h3>Write me a note.</h3>
-            <p>Your details will open in your email app. Nothing is submitted or stored here.</p>
+            <p>Your message will be sent directly to my inbox.</p>
             <div className="form-field"><Label htmlFor="name">Your name</Label><Input id="name" name="name" autoComplete="name" placeholder="What should I call you?" minLength={2} maxLength={100} required /></div>
             <div className="form-field"><Label htmlFor="email">Your email</Label><Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" maxLength={254} required /></div>
             <div className="form-field"><Label htmlFor="subject">Subject</Label><Input id="subject" name="subject" placeholder="What’s on your mind?" minLength={2} maxLength={150} required /></div>
             <div className="form-field"><Label htmlFor="message">Your message</Label><Textarea id="message" name="message" placeholder="A little context goes a long way…" minLength={10} maxLength={3000} rows={4} required /></div>
-            <Button type="submit" className="button-amber contact-submit" size="lg">Open email draft <Send aria-hidden="true" /></Button>
-            <p className="contact-notice" aria-live="polite">{contactNotice}</p>
+            <Button type="submit" className="button-amber contact-submit" size="lg" disabled={isSending}>
+              {isSending ? "Sending…" : "Send message"}
+              {isSending ? <LoaderCircle className="contact-spinner animate-spin" aria-hidden="true" /> : <Send aria-hidden="true" />}
+            </Button>
+            <p className={`contact-notice${contactStatus ? ` contact-notice-${contactStatus}` : ""}`} role="status" aria-live="polite">{contactNotice}</p>
           </form>
         </div>
       </section>
