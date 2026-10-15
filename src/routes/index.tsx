@@ -12,6 +12,7 @@ import {
   Code2,
   Coffee,
   Database,
+  FileText,
   Github,
   Globe2,
   GraduationCap,
@@ -36,6 +37,7 @@ import { Textarea } from "@/components/ui/textarea";
 const emailAddress = "anishbhaktula@gmail.com";
 const githubUrl = "https://github.com/anishWkx";
 const linkedinUrl = "https://www.linkedin.com/in/anish-bhaktula-b3b307286/";
+const resumeUrl = "https://drive.google.com/file/d/1ztjrFEsGCQN_yxSjfCgOnWCy2MaNmbzy/view?usp=drive_link";
 const navigation = [
   ["Home", "home"],
   ["About", "about"],
@@ -65,6 +67,7 @@ const projects = [
     icon: ScanText,
     preview: "ocr",
     features: ["Image and PDF text extraction", "Automated content insights", "Content scores and suggestions"],
+    repositoryUrl: "https://github.com/anishWkx/social-media-content-analyzer",
     featured: true,
   },
   {
@@ -76,17 +79,7 @@ const projects = [
     icon: Network,
     preview: "monitor",
     features: ["API health checks", "Response-time measurement", "Slow and failed endpoint detection"],
-    featured: false,
-  },
-  {
-    number: "03",
-    title: "ECO-Bin",
-    description:
-      "A web-based waste-segregation management system with a responsive dashboard and clear data visualizations.",
-    tags: ["React.js", "JavaScript", "HTML", "CSS"],
-    icon: Globe2,
-    preview: "eco",
-    features: ["Waste-management dashboard", "Data visualization", "Responsive interface"],
+    repositoryUrl: "https://github.com/anishWkx/APIHealthPerformanceMonitor",
     featured: false,
   },
 ];
@@ -238,8 +231,9 @@ function Portfolio() {
             <p className="eyebrow hero-eyebrow">FULL-STACK DEVELOPER · VIT-AP ’27</p>
             <h1 id="hero-title">Hey, I’m Anish.<br />I like making <span>things work.</span></h1>
             <p className="hero-intro">
-              I build responsive web apps and AI automations. If there’s a boring, repetitive problem out there,
-              I’m probably already thinking about how to fix it.
+              I enjoy taking a problem from a rough idea to a useful, responsive product—bringing together thoughtful
+              interfaces, practical backend features, and automation. I’m always looking for opportunities to learn,
+              contribute, and build things people can rely on.
             </p>
             <div className="hero-actions">
               <Button asChild className="button-amber" size="lg">
@@ -292,6 +286,16 @@ function Portfolio() {
             I’m drawn to full-stack development, AI-powered products, workflow automation, and the backend systems
             that make software dependable. I like learning by building—and making the everyday a little easier.
           </p>
+          <p className="about-detail">
+            During my internship, I contributed to web, content, and branding work; through CSI at VIT-AP, I’ve also
+            taken on a student leadership role. These experiences have helped me appreciate clear communication,
+            collaboration, and the care it takes to turn an idea into something useful.
+          </p>
+          <a className="resume-callout" href={resumeUrl} target="_blank" rel="noreferrer">
+            <span className="resume-icon"><FileText aria-hidden="true" /></span>
+            <span className="resume-copy"><span className="resume-kicker">A CLOSER LOOK</span><strong>Explore my resume</strong><small>Experience, education & skills</small></span>
+            <ArrowUpRight className="resume-arrow" aria-hidden="true" />
+          </a>
           <a href="#experience" className="inline-arrow-link">A little more about my journey <ArrowDownRight aria-hidden="true" /></a>
           <div className="about-highlights">
             <div><Sparkles aria-hidden="true" /><span>AI & intelligent apps</span></div>
@@ -369,13 +373,13 @@ function Portfolio() {
               <p className="eyebrow"><span className="section-dot" /> A FEW THINGS I’VE BUILT</p>
               <h2>Selected work<span className="title-period">.</span></h2>
             </div>
-            <p className="heading-note">Thoughtful little solutions<br />for problems worth solving.</p>
+            <p className="heading-note">A closer look at how I approach<br />real problems with practical software.</p>
           </div>
           <div className="projects-list">
-            {projects.map(({ number, title, description, tags, icon: Icon, preview, features, featured }) => (
+            {projects.map(({ number, title, description, tags, icon: Icon, preview, features, featured, repositoryUrl }) => (
               <article className={`project-card${featured ? " project-featured" : ""}`} key={number}>
                 <div className={`project-preview preview-${preview}`} aria-label={`Replaceable ${title} project preview placeholder`}>
-                  <div className="preview-topline"><span><i /> PROJECT PREVIEW</span><span>{number} / 03</span></div>
+                  <div className="preview-topline"><span><i /> PROJECT PREVIEW</span><span>{number} / 02</span></div>
                   {preview === "ocr" && (
                     <div className="ocr-window">
                       <div className="ocr-window-head"><span className="window-dots"><i /><i /><i /></span><span>content-insights.app</span><Menu aria-hidden="true" /></div>
@@ -385,9 +389,6 @@ function Portfolio() {
                   {preview === "monitor" && (
                     <div className="monitor-window"><div className="monitor-window-head"><Network aria-hidden="true" /><span>Endpoint status</span><span className="preview-badge">LIVE PREVIEW</span></div><div className="monitor-stat-row"><div><span>HEALTHY</span><strong>—</strong></div><div><span>AVG RESPONSE</span><strong>—<small>ms</small></strong></div></div>{["/api/status", "/api/users", "/api/metrics"].map((path) => <div className="endpoint-row" key={path}><span><i />{path}</span><span>Response time <strong>— ms</strong></span><ArrowRight aria-hidden="true" /></div>)}</div>
                   )}
-                  {preview === "eco" && (
-                    <div className="eco-window"><div className="eco-window-head"><span><Globe2 aria-hidden="true" /> eco-bin</span><span>MANAGEMENT OVERVIEW</span></div><div className="eco-title"><p>WASTE SEGREGATION</p><h4>A cleaner way<br />to keep track.</h4></div><div className="eco-tiles"><span><i>◌</i> ORGANIC</span><span><i>◇</i> RECYCLABLE</span><span><i>◎</i> GENERAL</span></div><div className="eco-chart" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div></div>
-                  )}
                   <span className="preview-replace"><Icon aria-hidden="true" /> Preview available as a replaceable image</span>
                 </div>
                 <div className="project-details">
@@ -395,7 +396,7 @@ function Portfolio() {
                   <p className="project-description">{description}</p>
                   <div className="project-tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   <ul className="project-features">{features.map((feature) => <li key={feature}><Check aria-hidden="true" /> {feature}</li>)}</ul>
-                  <div className="project-links"><span className="project-link-unavailable" title="A project URL has not been provided">View project <ArrowUpRight aria-hidden="true" /><small>LINK NOT PROVIDED</small></span><span className="project-link-unavailable" title="A repository URL has not been provided"><Github aria-hidden="true" /> GitHub repository <ArrowUpRight aria-hidden="true" /><small>LINK NOT PROVIDED</small></span></div>
+                  <div className="project-links"><span className="project-link-unavailable" title="A live project link has not been provided">Live project <ArrowUpRight aria-hidden="true" /><small>NOT PROVIDED</small></span><a className="project-repository-link" href={repositoryUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> View repository <ArrowUpRight aria-hidden="true" /></a></div>
                 </div>
               </article>
             ))}
