@@ -67,6 +67,7 @@ const projects = [
     icon: ScanText,
     preview: "ocr",
     features: ["Image and PDF text extraction", "Automated content insights", "Content scores and suggestions"],
+    liveUrl: "https://social-media-content-analyzer-nine-xi.vercel.app/",
     repositoryUrl: "https://github.com/anishWkx/social-media-content-analyzer",
     featured: true,
   },
@@ -376,7 +377,7 @@ function Portfolio() {
             <p className="heading-note">A closer look at how I approach<br />real problems with practical software.</p>
           </div>
           <div className="projects-list">
-            {projects.map(({ number, title, description, tags, icon: Icon, preview, features, featured, repositoryUrl }) => (
+            {projects.map(({ number, title, description, tags, icon: Icon, preview, features, featured, liveUrl, repositoryUrl }) => (
               <article className={`project-card${featured ? " project-featured" : ""}`} key={number}>
                 <div className={`project-preview preview-${preview}`} aria-label={`Replaceable ${title} project preview placeholder`}>
                   <div className="preview-topline"><span><i /> PROJECT PREVIEW</span><span>{number} / 02</span></div>
@@ -396,7 +397,7 @@ function Portfolio() {
                   <p className="project-description">{description}</p>
                   <div className="project-tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   <ul className="project-features">{features.map((feature) => <li key={feature}><Check aria-hidden="true" /> {feature}</li>)}</ul>
-                  <div className="project-links"><span className="project-link-unavailable" title="A live project link has not been provided">Live project <ArrowUpRight aria-hidden="true" /><small>NOT PROVIDED</small></span><a className="project-repository-link" href={repositoryUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> View repository <ArrowUpRight aria-hidden="true" /></a></div>
+                  <div className="project-links">{liveUrl ? <a className="project-repository-link" href={liveUrl} target="_blank" rel="noreferrer"><Globe2 aria-hidden="true" /> Open live app <ArrowUpRight aria-hidden="true" /></a> : <span className="project-link-unavailable" title="A live project link has not been provided">Live project <ArrowUpRight aria-hidden="true" /><small>NOT PROVIDED</small></span>}<a className="project-repository-link" href={repositoryUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> View repository <ArrowUpRight aria-hidden="true" /></a></div>
                 </div>
               </article>
             ))}
