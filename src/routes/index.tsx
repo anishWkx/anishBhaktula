@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import apiHealthMonitorScreenshot from "@/assets/api-health-monitor.png.asset.json";
+import socialMediaAnalyzerScreenshot from "@/assets/social-media-analyzer.png.asset.json";
 import {
   ArrowDownRight,
   ArrowLeft,
@@ -66,6 +68,7 @@ const projects = [
     tags: ["React.js", "JavaScript", "Node.js", "Express.js", "Tesseract OCR"],
     icon: ScanText,
     preview: "ocr",
+    screenshot: socialMediaAnalyzerScreenshot.url,
     features: ["Image and PDF text extraction", "Automated content insights", "Content scores and suggestions"],
     liveUrl: "https://social-media-content-analyzer-nine-xi.vercel.app/",
     repositoryUrl: "https://github.com/anishWkx/social-media-content-analyzer",
@@ -79,7 +82,9 @@ const projects = [
     tags: ["React.js", "JavaScript", "Node.js", "Express.js", "REST APIs"],
     icon: Network,
     preview: "monitor",
+    screenshot: apiHealthMonitorScreenshot.url,
     features: ["API health checks", "Response-time measurement", "Slow and failed endpoint detection"],
+    liveUrl: "https://api-health-performance-monitor-eight.vercel.app/",
     repositoryUrl: "https://github.com/anishWkx/APIHealthPerformanceMonitor",
     featured: false,
   },
@@ -377,20 +382,11 @@ function Portfolio() {
             <p className="heading-note">A closer look at how I approach<br />real problems with practical software.</p>
           </div>
           <div className="projects-list">
-            {projects.map(({ number, title, description, tags, icon: Icon, preview, features, featured, liveUrl, repositoryUrl }) => (
+            {projects.map(({ number, title, description, tags, icon: Icon, preview, screenshot, features, featured, liveUrl, repositoryUrl }) => (
               <article className={`project-card${featured ? " project-featured" : ""}`} key={number}>
                 <div className={`project-preview preview-${preview}`} aria-label={`Replaceable ${title} project preview placeholder`}>
-                  <div className="preview-topline"><span><i /> PROJECT PREVIEW</span><span>{number} / 02</span></div>
-                  {preview === "ocr" && (
-                    <div className="ocr-window">
-                      <div className="ocr-window-head"><span className="window-dots"><i /><i /><i /></span><span>content-insights.app</span><Menu aria-hidden="true" /></div>
-                      <div className="ocr-window-body"><div className="ocr-sidebar"><span>◈</span><i /><i /><i /></div><div className="ocr-main"><p>CONTENT ANALYSIS</p><h4>Your ideas,<br />made clearer.</h4><div className="ocr-file"><ScanText aria-hidden="true" /><span>social-post.png<small>Ready to analyze</small></span><Check aria-hidden="true" /></div><div className="ocr-result"><span>CONTENT SCORE</span><strong>—<small>/ 100</small></strong><div /></div></div></div>
-                    </div>
-                  )}
-                  {preview === "monitor" && (
-                    <div className="monitor-window"><div className="monitor-window-head"><Network aria-hidden="true" /><span>Endpoint status</span><span className="preview-badge">LIVE PREVIEW</span></div><div className="monitor-stat-row"><div><span>HEALTHY</span><strong>—</strong></div><div><span>AVG RESPONSE</span><strong>—<small>ms</small></strong></div></div>{["/api/status", "/api/users", "/api/metrics"].map((path) => <div className="endpoint-row" key={path}><span><i />{path}</span><span>Response time <strong>— ms</strong></span><ArrowRight aria-hidden="true" /></div>)}</div>
-                  )}
-                  <span className="preview-replace"><Icon aria-hidden="true" /> Preview available as a replaceable image</span>
+                  <img className="project-screen-image" src={screenshot} alt={`${title} live application screenshot`} loading="lazy" />
+                  <div className="preview-topline"><span><i /> LIVE APPLICATION</span><span>{number} / 02</span></div>
                 </div>
                 <div className="project-details">
                   <div className="project-title-row"><span className="project-number">{number}</span><h3>{title}</h3>{featured && <span className="featured-chip"><Sparkles aria-hidden="true" /> FEATURED</span>}</div>
