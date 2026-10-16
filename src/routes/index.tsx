@@ -337,9 +337,9 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> EXPERIENCE & LEADERSHIP</p>
-            <h2>Where I’ve<br /><span>made a start.</span></h2>
+            <h2>Experience that’s<br /><span>shaping how I work.</span></h2>
           </div>
-          <p className="heading-note">Learning from people, projects<br />and real-world collaboration.</p>
+          <p className="heading-note">An internship, student leadership, and<br />hands-on learning at university.</p>
         </div>
         <div className="experience-list">
           <article className="experience-item">
@@ -405,10 +405,11 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> HOW I CAN CONTRIBUTE</p>
-            <h2>Things I can<br /><span>help you build.</span></h2>
+            <h2>Let’s build something<br /><span>useful together.</span></h2>
           </div>
           <a href="#contact" className="service-contact-link">Have a project in mind? <ArrowUpRight aria-hidden="true" /></a>
         </div>
+        <p className="services-intro">From thoughtful web experiences to practical AI and automation, I’m interested in building tools that solve real needs.</p>
         <div className="services-grid">
           {services.map(({ icon: Icon, index, title, description }) => (
             <article className="service-item" key={index}>
