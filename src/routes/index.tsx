@@ -354,7 +354,7 @@ function Portfolio() {
             <ArrowUpRight className="experience-arrow" aria-hidden="true" />
           </article>
           <article className="experience-item">
-            <div className="experience-date experience-date-unspecified">UNSPECIFIED</div>
+            <div className="experience-date experience-date-unspecified">STUDENT LEADERSHIP</div>
             <div className="experience-symbol"><Network aria-hidden="true" /></div>
             <div className="experience-description">
               <p className="experience-type">LEADERSHIP</p>
@@ -405,7 +405,7 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> HOW I CAN CONTRIBUTE</p>
-            <h2>Let’s build something<br /><span>useful together.</span></h2>
+            <h2>Things I can help<br /><span>you build.</span></h2>
           </div>
           <a href="#contact" className="service-contact-link">Have a project in mind? <ArrowUpRight aria-hidden="true" /></a>
         </div>
