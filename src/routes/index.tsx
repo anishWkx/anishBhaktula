@@ -64,7 +64,7 @@ const projects = [
     number: "01",
     title: "Social Media Content Analyzer",
     description:
-      "A web application that extracts text from images and PDFs, then turns it into useful content insights, a score, and suggestions.",
+      "A web application that extracts text from images and PDFs, then brings content insights, a score, and suggestions together in one workflow.",
     tags: ["React.js", "JavaScript", "Node.js", "Express.js", "Tesseract OCR"],
     icon: ScanText,
     preview: "ocr",
@@ -78,7 +78,7 @@ const projects = [
     number: "02",
     title: "API Health & Performance Monitor",
     description:
-      "A full-stack monitoring dashboard for checking API availability, measuring response times, and spotting slow or failed endpoints.",
+      "A full-stack monitoring dashboard that brings API availability checks, response-time measurements, and slow or failed endpoints into one view.",
     tags: ["React.js", "JavaScript", "Node.js", "Express.js", "REST APIs"],
     icon: Network,
     preview: "monitor",
@@ -290,7 +290,8 @@ function Portfolio() {
           </p>
           <p className="about-detail">
             I’m drawn to full-stack development, AI-powered products, workflow automation, and the backend systems
-            that make software dependable. I like learning by building—and making the everyday a little easier.
+            that make software dependable. I like learning by building, working through the details, and making the
+            everyday a little easier.
           </p>
           <p className="about-detail">
             During my internship, I contributed to web, content, and branding work; through CSI at VIT-AP, I’ve also
@@ -319,7 +320,7 @@ function Portfolio() {
               <p className="eyebrow"><span className="section-dot" /> WHAT I WORK WITH</p>
               <h2>My toolkit<span className="title-period">.</span></h2>
             </div>
-            <p className="heading-note">Tools I’ve explored while building<br />practical software and learning along the way.</p>
+            <p className="heading-note">A growing toolkit shaped by projects,<br />coursework, and curiosity.</p>
           </div>
           <div className="skills-grid">
             {skillGroups.map(({ title, icon: Icon, skills }, index) => (
@@ -379,7 +380,7 @@ function Portfolio() {
               <p className="eyebrow"><span className="section-dot" /> A FEW THINGS I’VE BUILT</p>
               <h2>Selected work<span className="title-period">.</span></h2>
             </div>
-            <p className="heading-note">A closer look at how I approach<br />real problems with practical software.</p>
+            <p className="heading-note">A closer look at how I turn practical<br />ideas into useful software.</p>
           </div>
           <div className="projects-list">
             {projects.map(({ number, title, description, tags, icon: Icon, preview, screenshot, features, featured, liveUrl, repositoryUrl }) => (
@@ -427,7 +428,7 @@ function Portfolio() {
           <div className="contact-copy">
             <p className="eyebrow"><span className="section-dot" /> START A CONVERSATION</p>
             <h2>Got a good<br />problem? <span>Let’s solve it.</span></h2>
-            <p className="contact-lead">For opportunities, interesting ideas, or a nice conversation about building things—my inbox is open.</p>
+            <p className="contact-lead">For opportunities, collaborations, or an idea you’re exploring, I’d be glad to hear what you have in mind.</p>
             <a className="contact-email" href={`mailto:${emailAddress}`}><AtSign aria-hidden="true" />{emailAddress}<ArrowUpRight aria-hidden="true" /></a>
             <div className="contact-socials">
               <a href={githubUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> GitHub <ArrowUpRight aria-hidden="true" /></a>
@@ -438,7 +439,7 @@ function Portfolio() {
           <form className="contact-form" onSubmit={sendContactMessage} aria-busy={isSending}>
             <div className="contact-form-heading"><span>01 — SAY HELLO</span><ArrowDownRight aria-hidden="true" /></div>
             <h3>Have something in mind?</h3>
-            <p>Your message will be sent directly to my inbox.</p>
+            <p>Share a little about what you’re working on or where you’d like to start.</p>
             <div className="form-field"><Label htmlFor="name">Your name</Label><Input id="name" name="name" autoComplete="name" placeholder="What should I call you?" minLength={2} maxLength={100} required /></div>
             <div className="form-field"><Label htmlFor="email">Your email</Label><Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" maxLength={254} required /></div>
             <div className="form-field"><Label htmlFor="subject">Subject</Label><Input id="subject" name="subject" placeholder="What’s on your mind?" minLength={2} maxLength={150} required /></div>
