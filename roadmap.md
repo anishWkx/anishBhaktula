@@ -3,3 +3,4 @@
 - [x] Replace the two project mockups with correctly matched screenshots.
 - [x] Add the API Health & Performance Monitor live application URL.
 - [ ] Refresh the experience and services section headings and descriptions to make the portfolio copy more engaging without adding unsupported claims.
+- [ ] Check the refreshed section copy on desktop and mobile, then complete the content update.
