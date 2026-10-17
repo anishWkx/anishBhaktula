@@ -95,25 +95,25 @@ const services = [
     icon: Code2,
     index: "01",
     title: "Full-stack web development",
-    description: "Shape an idea into a responsive web app, connecting the interface to the backend.",
+    description: "Responsive web apps, from clear interfaces to connected backend features.",
   },
   {
     icon: Bot,
     index: "02",
     title: "AI-powered applications",
-    description: "Try practical AI and language-model integrations that make everyday tasks more useful.",
+    description: "Practical AI and language-model integrations for everyday applications.",
   },
   {
     icon: Workflow,
     index: "03",
     title: "Workflow automation",
-    description: "Turn repetitive tasks into smoother workflows with practical automation.",
+    description: "Connect everyday steps and cut down on repetitive work with automation.",
   },
   {
     icon: Network,
     index: "04",
     title: "APIs & monitoring",
-    description: "Build REST APIs and tools for checking service health and response times.",
+    description: "REST APIs and monitoring tools for checking availability and response times.",
   },
 ];
 
@@ -337,7 +337,7 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> EXPERIENCE & LEADERSHIP</p>
-            <h2>Experience that’s<br /><span>shaping how I work.</span></h2>
+            <h2>Learning by doing.<br /><span>Building as I go.</span></h2>
           </div>
           <p className="heading-note">An internship, student leadership, and<br />hands-on learning at university.</p>
         </div>
@@ -409,7 +409,7 @@ function Portfolio() {
           </div>
           <a href="#contact" className="service-contact-link">Have a project in mind? <ArrowUpRight aria-hidden="true" /></a>
         </div>
-        <p className="services-intro">From thoughtful web experiences to practical AI and automation, I’m interested in building tools that solve real needs.</p>
+        <p className="services-intro">I’m keen to work on real problems, learn through collaboration, and turn good ideas into useful digital experiences.</p>
         <div className="services-grid">
           {services.map(({ icon: Icon, index, title, description }) => (
             <article className="service-item" key={index}>
