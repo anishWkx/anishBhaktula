@@ -95,25 +95,25 @@ const services = [
     icon: Code2,
     index: "01",
     title: "Full-stack web development",
-    description: "Responsive web applications built across the frontend and backend.",
+    description: "Bring an idea to life with a responsive experience, connected from the interface to the backend.",
   },
   {
     icon: Bot,
     index: "02",
     title: "AI-powered applications",
-    description: "Practical software enhanced with AI capabilities and LLM integrations.",
+    description: "Explore practical ways AI and language models can make a product more useful.",
   },
   {
     icon: Workflow,
     index: "03",
     title: "Workflow automation",
-    description: "Automated workflows that help reduce repetitive tasks.",
+    description: "Connect everyday tasks into clearer workflows with less repetitive work.",
   },
   {
     icon: Network,
     index: "04",
     title: "APIs & monitoring",
-    description: "REST API development and tools to monitor availability and performance.",
+    description: "Create REST APIs and tools that help teams check service health and response times.",
   },
 ];
 
@@ -349,7 +349,7 @@ function Portfolio() {
               <p className="experience-type">INTERNSHIP</p>
               <h3>Marketing & Web Development Intern</h3>
               <p className="experience-company">Prayana Electric Pvt. Ltd.</p>
-              <p className="experience-copy">Contributed to website structure, content and improvements while supporting branding, marketing, wireframes and graphics. Collaborated with stakeholders on web development and communication activities.</p>
+              <p className="experience-copy">Helped improve website structure and content while contributing to branding and marketing materials, including wireframes and graphics. Worked with stakeholders across web development and communication activities.</p>
             </div>
             <ArrowUpRight className="experience-arrow" aria-hidden="true" />
           </article>
@@ -360,7 +360,7 @@ function Portfolio() {
               <p className="experience-type">LEADERSHIP</p>
               <h3>Director</h3>
               <p className="experience-company">Computer Society of India · VIT-AP University</p>
-              <p className="experience-copy">A student leadership role with the Computer Society of India chapter at VIT-AP.</p>
+              <p className="experience-copy">Representing my involvement in the Computer Society of India chapter at VIT-AP and learning through student leadership.</p>
             </div>
             <ArrowUpRight className="experience-arrow" aria-hidden="true" />
           </article>
@@ -437,7 +437,7 @@ function Portfolio() {
           </div>
           <form className="contact-form" onSubmit={sendContactMessage} aria-busy={isSending}>
             <div className="contact-form-heading"><span>01 — SAY HELLO</span><ArrowDownRight aria-hidden="true" /></div>
-            <h3>Write me a note.</h3>
+              <h3>Have something in mind?</h3>
             <p>Your message will be sent directly to my inbox.</p>
             <div className="form-field"><Label htmlFor="name">Your name</Label><Input id="name" name="name" autoComplete="name" placeholder="What should I call you?" minLength={2} maxLength={100} required /></div>
             <div className="form-field"><Label htmlFor="email">Your email</Label><Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" maxLength={254} required /></div>
