@@ -95,25 +95,25 @@ const services = [
     icon: Code2,
     index: "01",
     title: "Full-stack web development",
-    description: "Responsive web applications built across the frontend and backend.",
+    description: "Responsive web apps, from clear interfaces to connected backend features.",
   },
   {
     icon: Bot,
     index: "02",
     title: "AI-powered applications",
-    description: "Practical software enhanced with AI capabilities and LLM integrations.",
+    description: "Practical AI and language-model integrations for everyday applications.",
   },
   {
     icon: Workflow,
     index: "03",
     title: "Workflow automation",
-    description: "Automated workflows that help reduce repetitive tasks.",
+    description: "Connect everyday steps and cut down on repetitive work with automation.",
   },
   {
     icon: Network,
     index: "04",
     title: "APIs & monitoring",
-    description: "REST API development and tools to monitor availability and performance.",
+    description: "REST APIs and monitoring tools for checking availability and response times.",
   },
 ];
 
@@ -337,7 +337,7 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> EXPERIENCE & LEADERSHIP</p>
-            <h2>Experience that’s<br /><span>shaping how I work.</span></h2>
+            <h2>Learning by doing.<br /><span>Building as I go.</span></h2>
           </div>
           <p className="heading-note">An internship, student leadership, and<br />hands-on learning at university.</p>
         </div>
@@ -349,18 +349,18 @@ function Portfolio() {
               <p className="experience-type">INTERNSHIP</p>
               <h3>Marketing & Web Development Intern</h3>
               <p className="experience-company">Prayana Electric Pvt. Ltd.</p>
-              <p className="experience-copy">Contributed to website structure, content and improvements while supporting branding, marketing, wireframes and graphics. Collaborated with stakeholders on web development and communication activities.</p>
+              <p className="experience-copy">Contributed to website improvements and content, alongside branding and marketing work such as wireframes and graphics. Collaborated with stakeholders on web development and communication activities.</p>
             </div>
             <ArrowUpRight className="experience-arrow" aria-hidden="true" />
           </article>
           <article className="experience-item">
-            <div className="experience-date experience-date-unspecified">UNSPECIFIED</div>
+            <div className="experience-date experience-date-unspecified">STUDENT LEADERSHIP</div>
             <div className="experience-symbol"><Network aria-hidden="true" /></div>
             <div className="experience-description">
               <p className="experience-type">LEADERSHIP</p>
               <h3>Director</h3>
               <p className="experience-company">Computer Society of India · VIT-AP University</p>
-              <p className="experience-copy">A student leadership role with the Computer Society of India chapter at VIT-AP.</p>
+              <p className="experience-copy">Learning to support the Computer Society of India chapter at VIT-AP through a student leadership role.</p>
             </div>
             <ArrowUpRight className="experience-arrow" aria-hidden="true" />
           </article>
@@ -405,11 +405,11 @@ function Portfolio() {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span className="section-dot" /> HOW I CAN CONTRIBUTE</p>
-            <h2>Let’s build something<br /><span>useful together.</span></h2>
+            <h2>Things I can help<br /><span>you build.</span></h2>
           </div>
           <a href="#contact" className="service-contact-link">Have a project in mind? <ArrowUpRight aria-hidden="true" /></a>
         </div>
-        <p className="services-intro">From thoughtful web experiences to practical AI and automation, I’m interested in building tools that solve real needs.</p>
+        <p className="services-intro">I’m keen to work on real problems, learn through collaboration, and turn good ideas into useful digital experiences.</p>
         <div className="services-grid">
           {services.map(({ icon: Icon, index, title, description }) => (
             <article className="service-item" key={index}>
@@ -437,7 +437,7 @@ function Portfolio() {
           </div>
           <form className="contact-form" onSubmit={sendContactMessage} aria-busy={isSending}>
             <div className="contact-form-heading"><span>01 — SAY HELLO</span><ArrowDownRight aria-hidden="true" /></div>
-            <h3>Write me a note.</h3>
+            <h3>Have something in mind?</h3>
             <p>Your message will be sent directly to my inbox.</p>
             <div className="form-field"><Label htmlFor="name">Your name</Label><Input id="name" name="name" autoComplete="name" placeholder="What should I call you?" minLength={2} maxLength={100} required /></div>
             <div className="form-field"><Label htmlFor="email">Your email</Label><Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" maxLength={254} required /></div>
