@@ -465,28 +465,29 @@
 .portrait-wrap {
   position: relative;
   justify-self: end;
-  width: min(100%, 457px);
-  height: 404px;
+  width: min(100%, 365px);
+  height: 350px;
   animation: portfolio-enter 740ms 100ms ease both;
 }
 
 .portrait-backdrop {
   position: absolute;
-  top: 26px;
-  right: 17px;
-  width: 81%;
-  height: 83%;
+  top: 27px;
+  right: 4px;
+  width: 84%;
+  aspect-ratio: 1;
+  border-radius: 50%;
   background: var(--color-amber);
 }
 
 .portrait-panel {
   position: absolute;
-  inset: 0 34px 28px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  top: 8px;
+  left: 0;
+  width: min(84%, 310px);
+  aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 50%;
   border: 1px solid color-mix(in oklch, var(--color-foreground) 13%, transparent);
   background: var(--color-canvas-paper);
 }
@@ -501,6 +502,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: inherit;
 }
 
 .portrait-caption,
@@ -1355,7 +1357,7 @@
   .nav-links { gap: 14px; }
   .nav-link { font-size: 10px; }
   .hero-main { min-height: 480px; }
-  .portrait-wrap { height: 366px; }
+  .portrait-wrap { width: min(100%, 350px); height: 338px; }
   .about-section { gap: 43px; }
   .project-card { gap: 31px; }
   .project-preview { min-height: 0; }
@@ -1386,12 +1388,12 @@
   .hero-actions { margin-top: 19px; }
   .hero-actions .button-amber,.hero-actions .button-soft { height: 42px; padding-inline: 13px; font-size: 10px; }
   .hero-socials { margin-top: 23px; }
-  .portrait-wrap { justify-self: center; width: min(100%, 424px); height: clamp(291px, 79vw, 370px); }
-  .portrait-backdrop { top: 20px; right: 11px; width: 81%; height: 83%; }
-  .portrait-panel { inset: 0 22px 19px 0; }
+  .portrait-wrap { justify-self: center; width: min(100%, 316px); height: 306px; }
+  .portrait-backdrop { top: 20px; right: 3px; width: 84%; }
+  .portrait-panel { top: 4px; left: 0; width: min(84%, 270px); }
   .portrait-grid-mark { font-size: clamp(128px, 36vw, 172px); }
-  .portrait-note { width: 164px; min-height: 49px; padding-inline: 12px; font-size: 10px; }
-  .floating-stamp { top: 18px; width: 51px; height: 51px; font-size: 6px; }
+  .portrait-note { right: 0; bottom: 8px; width: 164px; min-height: 49px; padding-inline: 12px; font-size: 10px; }
+  .floating-stamp { top: 10px; right: 2px; width: 51px; height: 51px; font-size: 6px; }
   .floating-stamp svg { width: 14px; height: 14px; }
   .hero-index { right: 0; bottom: 35px; font-size: 8px; }
   .ticker,.ticker-track { min-height: 48px; }
