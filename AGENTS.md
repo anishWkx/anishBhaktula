@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 Contact form delivery uses the EmailJS browser SDK because its public key is designed for client-side submissions.
+
+Store external app imagery through lovable-assets pointers imported from `src/assets` so binary media stays out of source control.
