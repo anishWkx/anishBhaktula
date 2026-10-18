@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import apiHealthMonitorScreenshot from "@/assets/api-health-monitor.png.asset.json";
+import anishPortrait from "@/assets/anish-portrait.jpg.asset.json";
 import socialMediaAnalyzerScreenshot from "@/assets/social-media-analyzer.png.asset.json";
 import {
   ArrowDownRight,
@@ -255,13 +256,10 @@ function Portfolio() {
             </div>
           </div>
 
-          <div className="portrait-wrap" aria-label="Profile photo placeholder; replace with your portrait">
+          <div className="portrait-wrap" aria-label="Bhaktula Anish’s portrait">
             <div className="portrait-backdrop" />
-            <div className="portrait-grid-mark">A<span>.</span></div>
             <div className="portrait-panel">
-              <span className="portrait-caption"><Sparkles aria-hidden="true" /> YOUR PORTRAIT GOES HERE</span>
-              <div className="portrait-initials" aria-hidden="true">BA</div>
-              <span className="portrait-edit-note">A space for a photo, when you’re ready.</span>
+              <img className="portrait-photo" src={anishPortrait.url} alt="Portrait of Bhaktula Anish" />
             </div>
             <div className="portrait-note"><span>Building useful things</span><ArrowDownRight aria-hidden="true" /></div>
             <div className="floating-stamp"><span>CODE</span><Braces aria-hidden="true" /><span>CREATE</span></div>
