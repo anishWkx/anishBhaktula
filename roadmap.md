@@ -1,4 +1,5 @@
 # Current task roadmap
+- [ ] Fit Anish's supplied portrait into the existing hero photo box.
 - [x] Lightly strengthen the copy across the single-page portfolio while keeping claims accurate.
 - [x] Verify the updated portfolio builds cleanly.
 - [x] Add the Social Media Content Analyzer live application link.
